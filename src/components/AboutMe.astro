@@ -1,0 +1,42 @@
+---
+const skills = [
+  'Python', 'C++', 'HTML', 'CSS', 'Java','JavaScript', 'TypeScript', 'React', 'Astro', 'Node.js', 'Tailwind CSS',
+  'SQL', 'MongoDB', 'MySQL', 'SQLite','PostgreSQL', 'Git', 'REST APIs',
+];
+---
+<section id="sobre-mi" class="relative py-28 px-6 bg-base-950 overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl -z-10"></div>
+
+  <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-12 items-center">
+    <div class="md:col-span-2 reveal flex justify-center">
+      <div class="relative w-56 h-56 md:w-64 md:h-64">
+        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-accent-500 to-glow-cyan opacity-40 blur-2xl animate-spin-slow"></div>
+        <div class="relative w-full h-full rounded-full border-2 border-white/10 bg-base-800 flex items-center justify-center text-gray-500 overflow-hidden">
+          <img src="/src/imgs/portfolioLogo.png" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <div class="md:col-span-3 reveal">
+      <p class="text-accent-400 font-display tracking-widest text-sm uppercase mb-3">Sobre mí</p>
+      <h2 class="font-display text-4xl font-bold text-white mb-6">About Me</h2>
+
+      <p class="text-gray-400 leading-relaxed mb-4">
+          Soy un desarrollador con experiencia construyendo proyectos tanto de escritorio como servicios web, aplicando buenas prácticas y tecnologías modernas para resolver problemas concretos.
+
+          Me destaco por mi capacidad de aprendizaje continuo y adaptación a distintos entornos tecnológicos, buscando siempre mejorar la calidad y eficiencia de las soluciones que desarrollo
+      </p>
+      <p class="text-gray-400 leading-relaxed mb-8">
+        Disfruto trabajar en equipo y enfrentar nuevos desafíos que me permitan crecer profesionalmente, aportando valor mientras sigo ampliando mis conocimientos
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        {skills.map((skill) => (
+          <span class="text-sm px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:border-accent-500/50 hover:text-white transition-colors">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

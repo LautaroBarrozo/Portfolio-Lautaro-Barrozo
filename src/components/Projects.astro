@@ -1,0 +1,60 @@
+---
+const projects = [
+  {
+    imgage: '/src/imgs/Proyecto1Logo.png',
+    title: 'The Sportster Space',
+    description: 'Sitio web E-commerce, desarrollo de frontend y backend (base de datos inactiva link a version utilizando localStorage).',
+    tags: ['React', 'Mongodb', 'TypeScript'],
+    link: 'https://the-sportster-space.vercel.app/',
+    repo: 'https://github.com/LautaroBarrozo/The-Sportster-Space',
+  },
+  {
+    imgage: '/src/imgs/Proyecto2Logo.png',
+    title: 'Vanshy reparaciones',
+    description: 'La primer landing page que desarrollé.',
+    tags: ['HTML', 'CSS'],
+    link: 'https://vanshy-reparaciones.vercel.app/',
+    repo: 'https://github.com/LautaroBarrozo/Vanshy-Reparaciones',
+  },
+];
+---
+<section id="proyectos" class="relative py-28 px-6 bg-base-900">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal text-center mb-16">
+      <p class="text-accent-400 font-display tracking-widest text-sm uppercase mb-3">Mi trabajo</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white">Proyectos</h2>
+      <div class="mt-4 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-accent-500 to-glow-cyan"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {projects.map((project, i) => (
+        <div
+          class="reveal group relative rounded-2xl border border-white/10 bg-base-800/60 p-6 hover:border-accent-500/50 transition-all duration-300 hover:-translate-y-2"
+          style={`transition-delay:${i * 100}ms`}
+        >
+          <div class="absolute -inset-px rounded-2xl bg-gradient-to-br from-accent-500/0 to-glow-cyan/0 group-hover:from-accent-500/10 group-hover:to-glow-cyan/10 transition-all duration-300 -z-10"></div>
+
+          <div class="h-40 rounded-xl mb-5 bg-gradient-to-br from-base-700 to-base-600 flex items-center justify-center text-gray-500 text-sm">
+              <img src={project.imgage} alt="logo del proyecto">
+          </div>
+
+          <h3 class="font-display text-xl font-semibold text-white mb-2">{project.title}</h3>
+          <p class="text-gray-400 text-sm mb-4">{project.description}</p>
+
+          <div class="flex flex-wrap gap-2 mb-5">
+            {project.tags.map((tag) => (
+              <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-accent-300 border border-white/10">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div class="flex gap-4 text-sm font-medium">
+            <a href={project.link} target="_blank" class="text-accent-400 hover:text-accent-300 transition-colors">Ver demo →</a>
+            <a href={project.repo} target="_blank" class="text-gray-400 hover:text-white transition-colors">Código</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
